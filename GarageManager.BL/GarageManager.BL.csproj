@@ -7,4 +7,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GarageManager.Core\GarageManager.Core.csproj" />
+    <ProjectReference Include="..\GarageManager.DAL\GarageManager.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

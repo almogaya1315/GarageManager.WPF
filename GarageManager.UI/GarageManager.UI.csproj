@@ -8,4 +8,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GarageManager.BL\GarageManager.BL.csproj" />
+    <ProjectReference Include="..\GarageManager.Core\GarageManager.Core.csproj" />
+  </ItemGroup>
+
 </Project>
