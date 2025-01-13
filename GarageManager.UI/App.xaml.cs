@@ -9,6 +9,10 @@ namespace GarageManager.UI
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+                
+        }
     }
 
 }

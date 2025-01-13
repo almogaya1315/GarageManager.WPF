@@ -9,5 +9,9 @@ namespace GarageManager.UI.ViewModels.Menu
 {
     internal class MenuViewModel : ViewModel
     {
+        public MenuViewModel()
+        {
+            
+        }
     }
 }
