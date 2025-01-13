@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GarageManager.Core.Bases;
+using GarageManager.UI.Services;
 using GarageManager.UI.ViewModels.Menu;
 using System;
 using System.Collections.Generic;

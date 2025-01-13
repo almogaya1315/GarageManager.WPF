@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GarageManager.UI
+namespace GarageManager.UI.Services
 {
     internal class VmInjector
     {
