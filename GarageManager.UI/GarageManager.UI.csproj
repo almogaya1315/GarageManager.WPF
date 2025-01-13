@@ -13,4 +13,8 @@
     <ProjectReference Include="..\GarageManager.Core\GarageManager.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Splash\" />
+  </ItemGroup>
+
 </Project>
