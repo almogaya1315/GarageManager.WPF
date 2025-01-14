@@ -9,5 +9,7 @@ namespace GarageManager.UI.ViewModels.Container
     public enum BrowseArgsType
     {
         MenuArgs,
+        NewService,
+        LoadService
     }
 }

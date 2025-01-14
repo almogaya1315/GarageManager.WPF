@@ -15,5 +15,6 @@ namespace GarageManager.Core.Entities
         }
 
         public int SocialSecurityNumber { get; set; }
+        public string FullName { get; set; }
     }
 }

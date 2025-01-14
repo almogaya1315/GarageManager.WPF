@@ -2,6 +2,7 @@
 using GarageManager.UI.Models;
 using GarageManager.UI.ViewModels.Container;
 using GarageManager.UI.ViewModels.Menu;
+using GarageManager.UI.ViewModels.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,10 +41,10 @@ namespace GarageManager.UI.Services
             {
                 return new MenuViewModel(_browser) as T;
             }
-            //if (typeof(T) == typeof(???))
-            //{
-            //    return new ???(team, _changeManager, _collections) as T;
-            //}
+            if (typeof(T) == typeof(ServiceViewModel))
+            {
+                return new ServiceViewModel(_browser) as T;
+            }
 
             throw new InvalidOperationException();
         }

@@ -1,5 +1,4 @@
-﻿using GarageManager.UI.ViewModels.Menu;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GarageManager.UI.Views.Menu
+namespace GarageManager.UI.Views.Service
 {
     /// <summary>
-    /// Interaction logic for MenuView.xaml
+    /// Interaction logic for NewService.xaml
     /// </summary>
-    public partial class MenuView : UserControl
+    public partial class NewService : UserControl
     {
-        public MenuView()
+        public NewService()
         {
             InitializeComponent();
-            //DataContext = // unneccesary because is set in menuViews:MenuView
         }
     }
 }

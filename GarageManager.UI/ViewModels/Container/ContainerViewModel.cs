@@ -2,6 +2,7 @@
 using GarageManager.Core.Bases;
 using GarageManager.UI.Services;
 using GarageManager.UI.ViewModels.Menu;
+using GarageManager.UI.ViewModels.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,9 @@ namespace GarageManager.UI.ViewModels.Container
             {
                 case BrowseArgsType.MenuArgs:
                     ContainerContent = _injector.New<MenuViewModel>();
+                    break;
+                case BrowseArgsType.NewService:
+                    ContainerContent = _injector.New<ServiceViewModel>();
                     break;
             }
         }

@@ -18,8 +18,10 @@ namespace GarageManager.Core.DTO
         public CustomerDTO(CustomerEntity entity) : base(entity.Id)
         {
             SocialSecurityNumber = entity.Id;
+            FullName = entity.FullName;
         }
 
         public int SocialSecurityNumber { get; set; }
+        public string FullName { get; set; }
     }
 }

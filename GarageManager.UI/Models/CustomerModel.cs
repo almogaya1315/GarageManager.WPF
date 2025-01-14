@@ -11,7 +11,7 @@ namespace GarageManager.UI.Models
     {
         public CustomerModel(int id) : base(id)
         {
-                
+               
         }
     }
 }
