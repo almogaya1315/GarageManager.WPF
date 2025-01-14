@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GarageManager.UI.ViewModels.Container
 {
-    internal class ContainerViewModel : ViewModel
+    public class ContainerViewModel : BaseViewModel
     {
         private VmInjector _injector;
 
@@ -29,17 +29,17 @@ namespace GarageManager.UI.ViewModels.Container
         {
             _injector = new VmInjector(this);
 
-            //Browsed(new BrowseArgs(BrowseArgsType.MenuArgs));
+            Browsed(new BrowseArgs(BrowseArgsType.MenuArgs));
         }
 
-        //public void Browsed(BrowseArgs args)
-        //{
-        //    switch (args.Type)
-        //    {
-        //        case BrowseArgsType.MenuArgs:
-        //            ContainerContent = _injector.New<MenuViewModel>();
-        //            break;
-        //    }
-        //}
+        public void Browsed(BrowseArgs args)
+        {
+            switch (args.Type)
+            {
+                case BrowseArgsType.MenuArgs:
+                    ContainerContent = _injector.New<MenuViewModel>();
+                    break;
+            }
+        }
     }
 }

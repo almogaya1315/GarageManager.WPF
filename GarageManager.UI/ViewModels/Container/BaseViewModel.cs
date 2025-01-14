@@ -1,17 +1,18 @@
 ﻿using GalaSoft.MvvmLight;
+using GarageManager.Core.Bases;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GarageManager.Core.Bases
-{
-    public class ViewModel : ViewModelBase
+namespace GarageManager.UI.ViewModels.Container
+{ 
+    public class BaseViewModel : ViewModelBase
     {
-        //public Application App { get; set; }
+        public BaseApplication App { get; set; }
 
-        //public ViewModelBrowser Browser { get; set; }
+        public ViewModelBrowser Browser { get; set; }
 
         //public ISquadRepository SquadRepository { get; set; }
 
