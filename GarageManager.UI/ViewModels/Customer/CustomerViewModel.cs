@@ -10,22 +10,22 @@ namespace GarageManager.UI.ViewModels.Customer
 {
     public class CustomerViewModel : BaseViewModel
     {
-        private CustomerModel _customer;
+        private CustomerModel _model;
 
         public CustomerViewModel(int id)
         {
-            _customer = new CustomerModel(id);
+            _model = new CustomerModel(id);
         }
 
         public string FullName 
         {
             get
             {
-                return _customer.FullName;
+                return _model.FullName;
             }
             set
             {
-                _customer.FullName = value;
+                _model.FullName = value;
                 RaisePropertyChanged();
             }
         }

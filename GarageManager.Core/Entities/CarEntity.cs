@@ -1,4 +1,5 @@
 ﻿using GarageManager.Core.Bases;
+using GarageManager.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,6 @@ namespace GarageManager.Core.Entities
         }
 
         public int LisencePlateNumber { get; set; }
+        public eCarTypes Type { get; set; }
     }
 }
