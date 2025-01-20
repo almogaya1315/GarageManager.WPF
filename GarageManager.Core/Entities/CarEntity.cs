@@ -17,5 +17,7 @@ namespace GarageManager.Core.Entities
 
         public int LisencePlateNumber { get; set; }
         public eCarTypes Type { get; set; }
+
+        public string Name { get; set; }
     }
 }

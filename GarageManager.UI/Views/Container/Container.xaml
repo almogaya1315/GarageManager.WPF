@@ -24,9 +24,9 @@
         xmlns:menuViews="clr-namespace:GarageManager.UI.Views.Menu"
         mc:Ignorable="d"
         Title="Main Menu" 
-        d:DesignHeight="960"
-        d:DesignWidth="1240"
-        WindowState="Maximized" 
+        d:DesignHeight="300"
+        d:DesignWidth="700"
+        WindowState="Normal" 
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <DataTemplate DataType="{x:Type menuViewModel:MenuViewModel}">

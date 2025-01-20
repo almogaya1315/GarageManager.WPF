@@ -18,6 +18,11 @@ namespace GarageManager.DAL.Handlers
             _connectionString = "";
         }
 
+        public List<CarEntity> GetCars()
+        {
+            return null;
+        }
+
         public List<CustomerEntity> GetCustomers()
         {
             var output = new List<CustomerEntity>();

@@ -2,10 +2,13 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:GarageManager.UI"
+             xmlns:converters="clr-namespace:GarageManager.UI.Converters"
              StartupUri="Views\Container\Container.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            
+
+            <converters:TestConverter x:Key="TestConverter"/>
+
             <Style x:Key="ButtonTemplateStyle"
        TargetType="TextBlock">
                 <Setter Property="Margin"
@@ -16,6 +19,7 @@
             Value="30" />
                 <Setter Property="TextAlignment"
             Value="Center" />
+
 
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver"
@@ -35,6 +39,8 @@
                     Value="#e7f5f7" />
                     </Trigger>
 
+                    
+                    
                     <MultiTrigger>
                         <MultiTrigger.Conditions>
                             <Condition Property="IsMouseOver"
@@ -51,9 +57,11 @@
             </Style>
 
             <ControlTemplate x:Key="ButtonTemplate">
-                <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}}, Path=Content}"
+                <TextBlock x:Name="btnTxtblck" Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type Button}}, Path=Content}"
                Style="{StaticResource ButtonTemplateStyle}" />
             </ControlTemplate>
+
+            
 
             <Style x:Key="BorderStyle"
        TargetType="Border">

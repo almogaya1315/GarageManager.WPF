@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using GarageManager.BL.Repositories;
 using GarageManager.Core.Bases;
 using GarageManager.UI.ViewModels.Container;
 using System;
@@ -12,6 +13,8 @@ namespace GarageManager.UI.ViewModels.Menu
 {
     public class MenuViewModel : BaseViewModel
     {
+        private readonly IRepository _garageRepo;
+
         public MenuViewModel() { }
         public MenuViewModel(ViewModelBrowser browser)
         {
@@ -19,10 +22,17 @@ namespace GarageManager.UI.ViewModels.Menu
 
             NewService = new RelayCommand(ExecuteNewService);
             LoadService = new RelayCommand(ExecuteLoadService);
+
+            TestGetCars = new RelayCommand(ExecuteTestGetCars);
+
+            _garageRepo = new GarageRepository();
         }
 
         public ICommand NewService { get; set; }
         public ICommand LoadService { get; set; }
+
+
+        public ICommand TestGetCars { get; set; }
 
         private void ExecuteNewService()
         {
@@ -32,6 +42,12 @@ namespace GarageManager.UI.ViewModels.Menu
         private void ExecuteLoadService()
         {
             Browser.Browse(new BrowseArgs(BrowseArgsType.LoadService));
+        }
+
+        private void ExecuteTestGetCars()
+        {
+            var result = _garageRepo.GetCars();
+            
         }
     }
 }
