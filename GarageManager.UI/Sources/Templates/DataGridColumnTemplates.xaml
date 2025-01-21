@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <!--TextTemplate        TextEditingTemplate
+    ComboTemplate       ComboEditingTemplate
+    CheckTemplate       CheckEditingTemplate-->
+
+    <DataTemplate x:Key="TextTemplate">
+        <TextBlock Text="{Binding Value}"
+                   Height="23"
+                   MaxHeight="23"
+                   MinHeight="23"/>
+    </DataTemplate>
+    <DataTemplate x:Key="TextEditingTemplate">
+        <TextBox Text="{Binding Value}"
+                 Height="23"
+                 MaxHeight="23"
+                 MinHeight="23" />
+    </DataTemplate>
+    <!--ComboBoxReadOnlyCellTemplate-->
+    <DataTemplate x:Key="ComboTemplate">
+        <TextBlock Text="{Binding Value}"
+                   FontSize="12"
+                   Padding="6 3 3 3"
+                   Foreground="Black" />
+    </DataTemplate>
+    <!--ComboBoxCellEditingTemplate-->
+    <DataTemplate x:Key="ComboEditingTemplate">
+        <ComboBox SelectedItem="{Binding Value}"
+                  ItemsSource="{Binding Items}"
+                  FontSize="12"
+                  Height="23"
+                  MaxHeight="23"
+                  MinHeight="23"
+                  IsDropDownOpen="True"
+                  Foreground="Black" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="CheckTemplate">
+        <CheckBox IsChecked="{Binding Value}"
+                  IsEnabled="False"/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="CheckEditingTemplate">
+        <CheckBox IsChecked="{Binding Value}"
+                  IsEnabled="True" />
+    </DataTemplate>
+
+</ResourceDictionary>

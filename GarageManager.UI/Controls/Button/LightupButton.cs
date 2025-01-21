@@ -60,6 +60,8 @@ namespace GarageManager.UI.Controls.Button
                 //var templateTextbox = (TextBox)VisualTreeHelper.GetChild(btn, 0);
                 //var templateTextbox = XamlHelper.FindChild<TextBox>(btn, "btnTxtbx");
                 //templateTextbox.Foreground = isLightup ? Brushes.Red : _defaultForground;
+
+                //Application.Current.Dispatcher
             }
             catch (Exception ex)
             {

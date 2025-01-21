@@ -5,9 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GarageManager.UI.Views.Menu"
              xmlns:buttons="clr-namespace:GarageManager.UI.Controls.Button"
+             xmlns:grids="clr-namespace:GarageManager.UI.Controls.Grid"
              mc:Ignorable="d" 
              d:DesignHeight="960"
              d:DesignWidth="1240">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="/Sources/Templates/DataGridColumnTemplates.xaml"></ResourceDictionary>
+    </UserControl.Resources>
 
 
     <Border Background="#bfe3e9"
@@ -46,6 +51,18 @@
             </buttons:LightupButton>
             
             <!--grid column defs-->
+
+            <grids:CustomGrid ColumnBindings="{Binding GridColumns}">
+            </grids:CustomGrid>
+            
+            <CheckBox IsChecked="{Binding IsCheckedTest}">
+                
+            </CheckBox>
+
+            <!--RelativeSource={RelativeSource AncestorType={x:Type Button}, AncestorLevel=2}-->
+            <ComboBox ItemsSource="{Binding TestComboItems}" SelectedValue="{Binding SelectedTestComboboxItem}">
+                
+            </ComboBox>
 
         </StackPanel>
     </Border>
