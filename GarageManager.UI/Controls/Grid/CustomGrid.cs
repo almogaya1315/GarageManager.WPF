@@ -11,6 +11,11 @@ namespace GarageManager.UI.Controls.Grid
 {
     public class CustomGrid : System.Windows.Controls.DataGrid
     {
+        public CustomGrid()
+        {
+            AutoGenerateColumns = false;
+        }
+
         public List<ColumnViewModel> ColumnBindings
         {
             get { return (List<ColumnViewModel>)GetValue(ColumnBindingsProperty); }

@@ -16,7 +16,7 @@ namespace GarageManager.UI.ViewModels.Service
         {
             Browser = browser;
 
-            Customer = new CustomerViewModel(-1);
+            Customer = new CustomerViewModel(-1, "test");
         }
 
         public CustomerViewModel Customer { get; set; }

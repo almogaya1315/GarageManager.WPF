@@ -9,7 +9,7 @@ namespace GarageManager.UI.Models
 {
     internal class CustomerModel : CustomerDTO
     {
-        public CustomerModel(int id) : base(id)
+        public CustomerModel(int id, string fullName) : base(id, fullName)
         {
                
         }

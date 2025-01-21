@@ -52,7 +52,7 @@
             
             <!--grid column defs-->
 
-            <grids:CustomGrid ColumnBindings="{Binding GridColumns}">
+            <grids:CustomGrid ColumnBindings="{Binding GridColumns}" ItemsSource="{Binding DataSource}">
             </grids:CustomGrid>
             
             <CheckBox IsChecked="{Binding IsCheckedTest}">

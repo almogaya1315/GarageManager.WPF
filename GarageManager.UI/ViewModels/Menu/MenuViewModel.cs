@@ -3,6 +3,7 @@ using GarageManager.BL.Repositories;
 using GarageManager.Core.Bases;
 using GarageManager.UI.Controls.Grid;
 using GarageManager.UI.ViewModels.Container;
+using GarageManager.UI.ViewModels.Customer;
 using GarageManager.UI.ViewModels.Shared;
 using System;
 using System.Collections.Generic;
@@ -20,13 +21,14 @@ namespace GarageManager.UI.ViewModels.Menu
 
         public List<ComboBoxItem> TestComboItems { get; set; }
         public List<ColumnViewModel> GridColumns { get; set; }
+        public List<CustomerViewModel> DataSource { get; set; }
 
 
         private ComboBoxItem? _selectedTestComboboxItem;
         public ComboBoxItem? SelectedTestComboboxItem
         {
-            get 
-            { 
+            get
+            {
                 return _selectedTestComboboxItem;
             }
             set
@@ -67,7 +69,7 @@ namespace GarageManager.UI.ViewModels.Menu
 
 
 
-            TestComboItems = new List<ComboBoxItem> 
+            TestComboItems = new List<ComboBoxItem>
             {
                 new ComboBoxItem { Name = "one", Content = "1" },
                 new ComboBoxItem { Name = "two", Content = "2" },
@@ -80,12 +82,22 @@ namespace GarageManager.UI.ViewModels.Menu
 
 
 
-            GridColumns = new List<ColumnViewModel> 
+            GridColumns = new List<ColumnViewModel>
             {
-                new ColumnViewModel{ Header = "one", DataContextPath = "Id", Width = 100, Template = "TextTemplate", EditingTemplate = "TextEditingTemplate" },
-                new ColumnViewModel{ Header = "two", DataContextPath = "Name", Width = 100, Template = "TextTemplate", EditingTemplate = "TextEditingTemplate" },
+                new ColumnViewModel{ Header = "Id", DataContextPath = "Id", Width = 100, Template = "TextTemplate", EditingTemplate = "TextEditingTemplate" },
+                new ColumnViewModel{ Header = "FullName", DataContextPath = "FullName", Width = 100, Template = "TextTemplate", EditingTemplate = "TextEditingTemplate" },
                 new ColumnViewModel{ Header = "three", DataContextPath = "country", Width = 100, Template = "ComboTemplate", EditingTemplate = "ComboEditingTemplate" },
                 new ColumnViewModel{ Header = "four", DataContextPath = "isOk", Width = 100, Template = "CheckTemplate", EditingTemplate = "CheckEditingTemplate" },
+            };
+
+            DataSource = new List<CustomerViewModel>
+            {
+                new CustomerViewModel(1, "one"),
+                new CustomerViewModel(2, "two"),
+                new CustomerViewModel(3, "three"),
+                new CustomerViewModel(4, "four"),
+                new CustomerViewModel(5, "five"),
+                new CustomerViewModel(6, "six"),
             };
         }
 
@@ -114,7 +126,7 @@ namespace GarageManager.UI.ViewModels.Menu
         private void ExecuteTestGetCars()
         {
             var result = _garageRepo.GetCars();
-            
+
         }
     }
 }

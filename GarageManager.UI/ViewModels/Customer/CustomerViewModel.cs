@@ -1,5 +1,6 @@
 ﻿using GarageManager.UI.Models;
 using GarageManager.UI.ViewModels.Container;
+using GarageManager.UI.ViewModels.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,21 @@ namespace GarageManager.UI.ViewModels.Customer
     {
         private CustomerModel _model;
 
-        public CustomerViewModel(int id)
+        public CustomerViewModel(int id, string fullName)
         {
-            _model = new CustomerModel(id);
+            _model = new CustomerModel(id, fullName);
+
+            Id = new CellViewModel(id);
+            FullName = new CellViewModel(_model.FullName);
         }
 
-        public string FullName 
+        public int IdInt
+        {
+            get { return _model.Id; }
+            set { _model.Id = value; }
+        }
+
+        public string FullNameStr
         {
             get
             {
@@ -29,5 +39,8 @@ namespace GarageManager.UI.ViewModels.Customer
                 RaisePropertyChanged();
             }
         }
+
+        public CellViewModel Id { get; set; }
+        public CellViewModel FullName { get; set; }
     }
 }
