@@ -20,7 +20,8 @@ namespace GarageManager.DAL.Handlers
 
         public List<CarEntity> GetCars()
         {
-            return null;
+
+                return null;
         }
 
         public List<CustomerEntity> GetCustomers()

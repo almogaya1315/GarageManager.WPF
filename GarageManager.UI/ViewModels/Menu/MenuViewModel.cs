@@ -58,6 +58,9 @@ namespace GarageManager.UI.ViewModels.Menu
         public MenuViewModel() { }
         public MenuViewModel(ViewModelBrowser browser)
         {
+
+
+
             Browser = browser;
 
             NewService = new RelayCommand(ExecuteNewService);
@@ -67,6 +70,7 @@ namespace GarageManager.UI.ViewModels.Menu
 
             _garageRepo = new GarageRepository();
 
+            _garageRepo.GetCustomers();
 
 
             TestComboItems = new List<ComboBoxItem>

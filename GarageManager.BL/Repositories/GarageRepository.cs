@@ -13,6 +13,7 @@ namespace GarageManager.BL.Repositories
     public interface IRepository
     {
         public List<CarEntity> GetCars();
+        public List<CustomerEntity> GetCustomers();
     }
 
     public class RepositoryBase
@@ -32,9 +33,54 @@ namespace GarageManager.BL.Repositories
 
     public class GarageRepository : RepositoryBase, IRepository
     {
+
+
+
         public GarageRepository()
         {
 
+        }
+
+        public List<CustomerEntity> GetCustomers()
+        {
+            using (var con = OpenConnection())
+            {
+                var result = new List<CustomerEntity>();
+
+                try
+                {
+                    con.Open();
+                    var commnd = con.CreateCommand();
+                    commnd.CommandType = CommandType.StoredProcedure;
+                    commnd.CommandText = "sp_GetCustomers";
+                    var idParam = new SqlParameter("@Id", 3);
+                    commnd.Parameters.Add(idParam);
+                    var reader = commnd.ExecuteReader();
+
+                    if (reader != null && reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            var id = (int)reader["Id"];
+                            var name = (string)reader["Name"];
+                            var car = (int)reader["CarId"];
+                            var newEntity = new CustomerEntity(id);
+                            newEntity.FullName = name;
+                            newEntity.CarId = car;
+                            result.Add(newEntity);
+                        }
+                    }
+
+                    
+
+                }
+                catch (Exception e)
+                {
+                    
+                }
+
+                return result;
+            }
         }
 
         public List<CarEntity> GetCars()
