@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarageManager.UI", "GarageManager.UI\GarageManager.UI.csproj", "{8CED3A44-7D4A-4CE6-8C93-BE8C953880AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarageManager.Core", "GarageManager.Core\GarageManager.Core.csproj", "{F9EB3AFF-2AC4-4D9F-8C54-FB02FABEB6BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarageManager.DAL", "GarageManager.DAL\GarageManager.DAL.csproj", "{0BB98647-F6A8-43F6-A44E-A595925676E0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarageManager.BL", "GarageManager.BL\GarageManager.BL.csproj", "{FEC7C7B3-5B9A-4CA2-B3E9-4B667856A7E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarageManager.DAL", "GarageManager.DAL\GarageManager.DAL.csproj", "{A5800EDF-2442-4E84-89F2-E8B48ACC6350}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{F9EB3AFF-2AC4-4D9F-8C54-FB02FABEB6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9EB3AFF-2AC4-4D9F-8C54-FB02FABEB6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9EB3AFF-2AC4-4D9F-8C54-FB02FABEB6BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BB98647-F6A8-43F6-A44E-A595925676E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BB98647-F6A8-43F6-A44E-A595925676E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BB98647-F6A8-43F6-A44E-A595925676E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BB98647-F6A8-43F6-A44E-A595925676E0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FEC7C7B3-5B9A-4CA2-B3E9-4B667856A7E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FEC7C7B3-5B9A-4CA2-B3E9-4B667856A7E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEC7C7B3-5B9A-4CA2-B3E9-4B667856A7E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEC7C7B3-5B9A-4CA2-B3E9-4B667856A7E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5800EDF-2442-4E84-89F2-E8B48ACC6350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5800EDF-2442-4E84-89F2-E8B48ACC6350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5800EDF-2442-4E84-89F2-E8B48ACC6350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5800EDF-2442-4E84-89F2-E8B48ACC6350}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

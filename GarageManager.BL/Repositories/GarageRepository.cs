@@ -1,4 +1,6 @@
 ﻿using GarageManager.Core.Entities;
+using GarageManager.DAL.Contexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,6 +16,8 @@ namespace GarageManager.BL.Repositories
     {
         public List<CarEntity> GetCars();
         public List<CustomerEntity> GetCustomers();
+
+        public List<CarEntity> GetCars_EF();
     }
 
     public class RepositoryBase
@@ -33,13 +37,36 @@ namespace GarageManager.BL.Repositories
 
     public class GarageRepository : RepositoryBase, IRepository
     {
-
+        private GarageContext _garageContext;
 
 
         public GarageRepository()
         {
-
+            _garageContext = new GarageContext(new DbContextOptions<GarageContext>());
         }
+
+        //public List<CustomerEntity> GetCustomers()
+        //{
+        //    var output = new List<CustomerEntity>();
+
+        //    using (var con = new SqlConnection(_connectionString))
+        //    {
+        //        var command = con.CreateCommand();
+        //        command.CommandText = "SELECT * FROM tbl_Customers";
+        //        //command.Parameters.Add()
+        //        command.ExecuteNonQuery();
+        //        if (command.ExecuteReader().Read())
+        //        {
+        //            var ds = new DataSet();
+        //            var da = new SqlDataAdapter(command);
+        //            da.Fill(ds);
+        //            var customer = new CustomerEntity(-1);
+        //            output.Add(customer);
+        //        }
+        //    }
+
+        //    return output;
+        //}
 
         public List<CustomerEntity> GetCustomers()
         {
@@ -124,5 +151,15 @@ namespace GarageManager.BL.Repositories
                 return result;
             }
         }
+
+
+        public List<CarEntity> GetCars_EF()
+        {
+            using (_garageContext)
+            {
+                return _garageContext.Cars.ToList();
+            }   
+        }
+        
     }
 }

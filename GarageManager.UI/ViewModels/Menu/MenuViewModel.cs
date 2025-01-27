@@ -129,7 +129,8 @@ namespace GarageManager.UI.ViewModels.Menu
 
         private void ExecuteTestGetCars()
         {
-            var result = _garageRepo.GetCars();
+            //var result = _garageRepo.GetCars();
+            var result = _garageRepo.GetCars_EF();
 
         }
     }
