@@ -1,4 +1,5 @@
-﻿using GarageManager.Core.Enums;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using GarageManager.Core.Enums;
 using GarageManager.UI.Models;
 using GarageManager.UI.ViewModels.Container;
 using System;
@@ -27,7 +28,7 @@ namespace GarageManager.UI.ViewModels.Car
             set
             {
                 _model.Type = value;
-                RaisePropertyChanged();
+                RaisePropertyChanged(this, value);
             }
         }
     }

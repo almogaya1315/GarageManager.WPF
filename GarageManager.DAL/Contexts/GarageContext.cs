@@ -11,7 +11,13 @@ namespace GarageManager.DAL.Contexts
 {
     public class GarageContext : DbContext
     {
-        private readonly string _connectionString;
+        private readonly string? _connectionString;
+
+        public GarageContext()
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<GarageContext>();
+            optionsBuilder.UseSqlServer(_connectionString);
+        }
 
         public GarageContext(DbContextOptions<GarageContext> options) : base(options)
         {
@@ -24,7 +30,7 @@ namespace GarageManager.DAL.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_connectionString);
+            if (!optionsBuilder.IsConfigured) optionsBuilder.UseSqlServer(_connectionString);
 
             base.OnConfiguring(optionsBuilder);
         }
@@ -32,7 +38,20 @@ namespace GarageManager.DAL.Contexts
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //FLUENT API
-            //modelBuilder.
+
+            //var car = modelBuilder.Entity<CarEntity>();
+
+            //car.ToTable("Tbl_Cars").HasKey(s => s.Id);
+            //car.Property(s => s.LisencePlateNumber).IsRequired();
+            //car.Property(s => s.Type).IsRequired();
+            //car.Property(s => s.Name).IsRequired().HasMaxLength(50);
+
+            //var customer = modelBuilder.Entity<CustomerEntity>();
+            //customer.ToTable("Tbl_Customers").HasKey(s => s.Id);
+            //customer.Property(s => s.SocialSecurityNumber).IsRequired();
+            //customer.HasOne(s => s.Car).WithOne(s => s.Customer).HasForeignKey("CarId");
+            //customer.Property(s => s.FullName).IsRequired().HasMaxLength(500);
+            
 
             base.OnModelCreating(modelBuilder);
         }

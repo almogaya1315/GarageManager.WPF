@@ -16,7 +16,7 @@ namespace GarageManager.UI.ViewModels.Shared
             set
             {
                 _value = value;
-                RaisePropertyChanged();
+                RaisePropertyChanged(this, value);
             }
         }
 

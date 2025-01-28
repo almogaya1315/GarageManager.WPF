@@ -21,11 +21,13 @@ namespace GarageManager.Core.Entities
         public int SocialSecurityNumber { get; set; }
 
         [StringLength(500)]
-        public string FullName { get; set; }
+        public string? FullName { get; set; }
 
-        [Required]
         [ForeignKey("Car")]
         public int CarId { get; set; }
-        public virtual CarEntity Car { get; set; }
+        public virtual CarEntity? Car { get; set; }
+
+        [StringLength(200)]
+        public string Adress { get; set; }
     }
 }

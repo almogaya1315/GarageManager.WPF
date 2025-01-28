@@ -21,14 +21,14 @@ namespace GarageManager.UI.ViewModels.Shared
                 if (Equals(_value, value)) return;
 
                 _value = value;
-                RaisePropertyChanged();
+                RaisePropertyChanged(this, value);
             }
         }
 
         public void SetValueToBinding(object value)
         {
             if (!Equals(Value, value)) _value = value;
-            RaisePropertyChanged("Value");
+            RaisePropertyChanged(this, value, "Value");
         }
 
         public EditingCellViewModel(object value, bool isEnabled = true) : base(value)

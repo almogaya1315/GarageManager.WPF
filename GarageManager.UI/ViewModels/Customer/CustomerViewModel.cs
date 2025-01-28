@@ -36,7 +36,7 @@ namespace GarageManager.UI.ViewModels.Customer
             set
             {
                 _model.FullName = value;
-                RaisePropertyChanged();
+                RaisePropertyChanged(this, value);
             }
         }
 

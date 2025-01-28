@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿//using GalaSoft.MvvmLight.Command;
+using CommunityToolkit.Mvvm.Input;
 using GarageManager.BL.Repositories;
 using GarageManager.Core.Bases;
 using GarageManager.UI.Controls.Grid;
@@ -34,7 +35,7 @@ namespace GarageManager.UI.ViewModels.Menu
             set
             {
                 _selectedTestComboboxItem = value;
-                RaisePropertyChanged();
+                RaisePropertyChanged(this, value);
             }
         }
 
@@ -51,7 +52,7 @@ namespace GarageManager.UI.ViewModels.Menu
                 var nextIndex = SelectedTestComboboxItem != null ? (int?)(int.Parse((string)SelectedTestComboboxItem.Content)) : null;
                 SelectedTestComboboxItem = DefaultSelectedItem(nextIndex);
                 //RaisePropertyChanged("SelectedTestComboboxItem", newValue: DefaultSelectedItem(nextIndex));
-                RaisePropertyChanged();
+                RaisePropertyChanged(this, value);
             }
         }
 
@@ -70,7 +71,7 @@ namespace GarageManager.UI.ViewModels.Menu
 
             _garageRepo = new GarageRepository();
 
-            _garageRepo.GetCustomers();
+            _garageRepo.GetCustomers(2);
 
 
             TestComboItems = new List<ComboBoxItem>
@@ -130,7 +131,7 @@ namespace GarageManager.UI.ViewModels.Menu
         private void ExecuteTestGetCars()
         {
             //var result = _garageRepo.GetCars();
-            var result = _garageRepo.GetCars_EF();
+            var result = _garageRepo.GetCars();
 
         }
     }
