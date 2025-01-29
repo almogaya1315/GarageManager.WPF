@@ -11,17 +11,17 @@ namespace GarageManager.DAL.Contexts
 {
     public class GarageContext : DbContext
     {
-        private readonly string? _connectionString;
+        //private readonly string? _connectionString;
 
         public GarageContext()
         {
-            var optionsBuilder = new DbContextOptionsBuilder<GarageContext>();
-            optionsBuilder.UseSqlServer(_connectionString);
+            //var optionsBuilder = new DbContextOptionsBuilder<GarageContext>();
+            //optionsBuilder.UseSqlServer(_connectionString);
         }
 
         public GarageContext(DbContextOptions<GarageContext> options) : base(options)
         {
-            _connectionString = @"Data Source=DESKTOP-I9GEGTE\MSSQLSERVER1;Initial Catalog=LocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+            //_connectionString = @"Data Source=DESKTOP-I9GEGTE\MSSQLSERVER1;Initial Catalog=LocalDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
         }
 
         public DbSet<CarEntity> Cars { get; set; }
@@ -30,9 +30,12 @@ namespace GarageManager.DAL.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured) optionsBuilder.UseSqlServer(_connectionString);
+            //if (!optionsBuilder.IsConfigured)
 
-            base.OnConfiguring(optionsBuilder);
+            var _connectionString = @"Data Source=DESKTOP-I9GEGTE\MSSQLSERVER1;Initial Catalog=GarageDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+            optionsBuilder.UseSqlServer(_connectionString);
+
+            //base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -61,7 +64,7 @@ namespace GarageManager.DAL.Contexts
             return Cars.FirstOrDefault(f => f.Id == id);
         }
 
-        public bool SaveCar(CarEntity entity)
+        public bool UpdateCar(CarEntity entity)
         {
             var success = false;
             try

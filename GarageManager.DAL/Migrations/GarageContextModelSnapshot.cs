@@ -29,9 +29,6 @@ namespace GarageManager.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<int>("LisencePlateNumber")
                         .HasColumnType("int");
 
@@ -44,8 +41,6 @@ namespace GarageManager.DAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("Tbl_Cars");
                 });
@@ -93,18 +88,7 @@ namespace GarageManager.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Services");
-                });
-
-            modelBuilder.Entity("GarageManager.Core.Entities.CarEntity", b =>
-                {
-                    b.HasOne("GarageManager.Core.Entities.CustomerEntity", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
+                    b.ToTable("Tbl_Services");
                 });
 
             modelBuilder.Entity("GarageManager.Core.Entities.CustomerEntity", b =>

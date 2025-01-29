@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GarageManager.DAL.Migrations
 {
     [DbContext(typeof(GarageContext))]
-    [Migration("20250128100817_DevFlow_Adress_280125")]
-    partial class DevFlow_Adress_280125
+    [Migration("20250129110621_InitialCreate_v1.0")]
+    partial class InitialCreate_v10
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,9 +32,6 @@ namespace GarageManager.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CustomerId")
-                        .HasColumnType("int");
-
                     b.Property<int>("LisencePlateNumber")
                         .HasColumnType("int");
 
@@ -47,8 +44,6 @@ namespace GarageManager.DAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("Tbl_Cars");
                 });
@@ -96,18 +91,7 @@ namespace GarageManager.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Services");
-                });
-
-            modelBuilder.Entity("GarageManager.Core.Entities.CarEntity", b =>
-                {
-                    b.HasOne("GarageManager.Core.Entities.CustomerEntity", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Customer");
+                    b.ToTable("Tbl_Services");
                 });
 
             modelBuilder.Entity("GarageManager.Core.Entities.CustomerEntity", b =>

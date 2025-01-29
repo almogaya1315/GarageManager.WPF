@@ -1,4 +1,5 @@
 ﻿using GarageManager.Core.Entities;
+using GarageManager.Core.Enums;
 using GarageManager.DAL.Contexts;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -164,6 +165,25 @@ namespace GarageManager.BL.Repositories
             using (_garageContext)
             {
                 return _garageContext.Cars.ToList();
+            }
+        }
+
+        public CarEntity CreateCar()
+        {
+            using (var _garageContext = new GarageContext())
+            {
+                var newCar = new CarEntity(-1) 
+                {
+                    //CustomerId = -1,
+                    LisencePlateNumber = -1,
+                    Name = "temp",
+                    Type = default(eCarTypes),
+                };
+
+                _garageContext.Cars.Add(newCar);
+                _garageContext.SaveChanges();
+
+                return newCar;
             }
         }
 

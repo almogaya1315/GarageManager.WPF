@@ -27,8 +27,8 @@ namespace GarageManager.Core.Entities
         [StringLength(50)]
         public string Name { get; set; }
 
-        [ForeignKey("Customer")]
-        public int CustomerId { get; set; }
-        public CustomerEntity? Customer { get; set; }
+        //[ForeignKey("Customer")]
+        //public int CustomerId { get; set; }
+        //public CustomerEntity? Customer { get; set; }
     }
 }
